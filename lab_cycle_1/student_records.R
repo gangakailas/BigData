@@ -5,9 +5,10 @@ get_input <- function(prompt) {
 }
 
 validate_age <- function(age){
-  if(is.numeric(age) && age>0 && age %% 1 == 0){
+  age <- suppressWarnings(as.numeric(age))
+  if(!is.na(age) && age > 0 && age == round(age)){
     return(TRUE)
-  }else{
+  } else {
     return(FALSE)
   }
 }
