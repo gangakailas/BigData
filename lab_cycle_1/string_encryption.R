@@ -1,3 +1,4 @@
+
 caesar_cipher_encrypt <- function(sentence, shift) {
   
   shift_char <- function(char, shift) {
@@ -11,9 +12,9 @@ caesar_cipher_encrypt <- function(sentence, shift) {
     return(new_char)
   }
   
+
   encrypted_sentence <- paste(sapply(strsplit(sentence, NULL)[[1]], shift_char, shift), collapse = "")
   return(encrypted_sentence)
-  
 }
 
 
@@ -24,6 +25,7 @@ shift <- as.integer(readline(prompt = "Enter shift value: "))
 if (is.na(shift) || shift < 0) {
   cat("Invalid shift value. Please enter a non-negative integer.\n")
 } else {
+
   encrypted_sentence <- caesar_cipher_encrypt(sentence, shift)
   cat("Encrypted sentence:", encrypted_sentence, "\n")
 }
